@@ -1,0 +1,102 @@
+/* Styling just for the homepage */
+:root {
+	--header-image: url(/assets/media/2025/ankara-selfie.jpg);
+}
+
+/* Image header with links and latest post */
+
+header {
+        width: calc(100% - 160px);
+        margin: 0;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 80px;
+	padding-bottom: 100vh; /* So image can be seen */
+        border-radius: 0 0 0 80px;
+
+        background-color: var(--bg-dimmed);
+        background-image: var(--header-image);
+	background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+
+        color: var(--fg-main);
+        border-bottom: 3px solid var(--accent-2);
+        border-left: 3px solid var(--accent-2);
+	
+        /*border-image: linear-gradient(80deg, var(--accent-1), var(--accent-2)) 3;*/
+}
+
+header :is(aside, address, section), section {
+        width: min(calc(100% - 80px), 640px);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 40px;
+
+        text-align: center;
+
+        border: 0;
+        border-radius: 0 0 0 40px;
+
+        background-color: var(--bg-translucent);
+
+        color: var(--fg-main);
+}
+
+/* Other posts */
+
+section:not(header section):nth-of-type(odd) {
+        border-bottom: 3px solid var(--accent-1);
+        border-left: 3px solid var(--accent-1);
+}
+section:not(header section):nth-of-type(even) {
+        border-bottom: 3px solid var(--accent-2);
+        border-left: 3px solid var(--accent-2);
+}
+section h2 {
+        margin-top: 0;
+}
+
+/* Button links in the header */
+header address ul {
+        margin: 0;
+        padding: 0;
+}
+header address a {
+        text-decoration: none;
+        color: inherit;
+}
+header address ul li {
+        margin: 0;
+        padding: 0;
+        marker: none;
+
+        display: block;
+        width: calc(100% - 40px);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 0;
+
+        font-size: 30px;
+        font-weight: bold;
+        font-style: normal;
+
+        background-color: var(--bg-dimmed);
+        color: var(--accent-1);
+}
+header address ul li:hover {
+        background-color: var(--bg-main);
+        outline: 3px solid var(--accent-2);
+        color: var(--accent-2);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+	header {
+		padding-left: 0;
+		padding-right: 0;
+        	width: 100%;
+	}
+}

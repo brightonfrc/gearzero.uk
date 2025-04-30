@@ -1,0 +1,186 @@
+/* Styling that will be applied to all pages. */
+
+/* General imports and variables */
+@font-face {
+  font-family: "Inter";
+  src: local("/assets/fonts/inter/Inter"), url("/assets/fonts/inter/InterVariable.ttf") format("truetype");
+}
+
+:root {
+	--bg-main: #ffffff;
+	--bg-translucent: #ffffffee;
+	--bg-dimmed: #eeeeee;
+
+	--fg-main: #000000;
+	--fg-dimmed: #111111;
+
+	--accent-1: #2244cc;
+	--accent-2: #887700;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg-main: #000000;
+		--bg-translucent: #000000ee;
+		--bg-dimmed: #111111;
+
+		--fg-main: #ffffff;
+		--fg-dimmed: #eeeeee;
+
+		--accent-1: #4e79fb;
+		--accent-2: #ffee51;
+
+	}
+}
+
+/* General styles */
+body {
+	margin: 0;
+	padding: 0;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	background-color: var(--bg-main);
+
+	font-family: "Inter", "Noto Sans", "Liberation Sans", "Calibri", sans-serif;
+}
+
+* {
+	transition: all 0.25s;
+}
+
+a {
+	color: var(--accent-1);
+	font-weight: bold;
+	text-decoration: underline;
+}
+a:hover {
+	color: var(--accent-2);
+}
+
+p, ul, ol {
+	font-size: 20px;
+}
+h2 {
+	font-size: 40px;
+}
+h2 small {
+	font-size: 20px;
+	
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px;
+	margin: 0;
+	border-radius: 5px;
+	
+	background-color: var(--bg-dimmed);
+	color: var(--accent-1);
+
+}
+
+/* Navigation bar at top of screen */
+
+nav {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	
+	height: 80px;
+	width: calc(100% - 160px);
+	padding-left: 80px;
+	padding-right: 80px;
+	border-radius: 0 0 0 80px;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: var(--bg-main);
+	border-bottom: 3px solid var(--accent-1);
+	border-left: 3px solid var(--accent-1);
+	/*border-image: linear-gradient(80deg, var(--accent-1), var(--accent-2)) 3;*/
+
+	color: var(--fg-main);
+}
+nav:hover {
+	color: var(--accent-2);
+}
+
+nav h1 {
+	font-size: 50px;
+	line-height: 70px;
+	
+}
+nav aside {
+	font-size: 50px;
+	line-height: 70px;	
+}
+nav :is(div, h1, aside) {
+	flex: 1;
+
+	display: block;
+	height: calc(100% - 10px);
+	margin: 5px;
+	padding: 0;
+}
+
+nav div > img {
+	height: 70px;
+	border-radius: 50%;
+	background-color: #000000;
+}
+nav h1 {
+	text-align: center;
+}
+nav aside {
+	text-align: right;
+}
+
+nav aside small {
+	display: inline-block;
+	height: 70px;
+	margin: 0;
+	padding: 0;
+
+	font-size: 30px;
+	line-height: 70px;
+
+	vertical-align: top;
+	margin-right: 1ex;
+
+	color: var(--fg-dimmed);
+}
+
+/* Responsiveness */
+
+@media (max-width: 900px) {
+	/* Just show logo and number */
+	nav h1 {
+		display: none;
+	}
+	nav aside small {
+		display: none;
+	}
+
+	header, nav {
+		border-radius: 0 0 0 40px;
+		padding-left: 40px;
+		padding-right: 40px;
+		width: calc(100% - 80px);
+	}
+}
+
+/* Footer */
+
+footer {
+	margin: 0;
+	padding: 20px;
+}
+footer p { /* Legal, Disclaimers, etc. */
+	font-size: 15px;
+	color: var(--fg-dimmed);
+	text-align: center;
+}
