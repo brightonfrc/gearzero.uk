@@ -1,30 +1,10 @@
 /* Styling just for the homepage */
-:root {
-	--header-image: url(/assets/media/2025/ankara-selfie.jpg);
-}
 
 /* Image header with links and latest post */
 
 header {
-        width: calc(100% - 160px);
-        margin: 0;
-        padding-left: 80px;
-        padding-right: 80px;
-        padding-top: 80px;
 	padding-bottom: 100vh; /* So image can be seen */
-        border-radius: 0 0 0 80px;
-
-        background-color: var(--bg-dimmed);
-        background-image: var(--header-image);
 	background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-
-        color: var(--fg-main);
-        border-bottom: 3px solid var(--accent-2);
-        border-left: 3px solid var(--accent-2);
-	
-        /*border-image: linear-gradient(80deg, var(--accent-1), var(--accent-2)) 3;*/
 }
 
 header :is(aside, address, section), section {
@@ -92,11 +72,4 @@ header address ul li:hover {
         color: var(--accent-2);
 }
 
-/* Responsive design */
-@media (max-width: 900px) {
-	header {
-		padding-left: 0;
-		padding-right: 0;
-        	width: 100%;
-	}
-}
+

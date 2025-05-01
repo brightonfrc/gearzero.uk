@@ -1,0 +1,36 @@
+/* Styling for pages with content */
+
+/* Image header with title */
+header h1 {
+	color: var(--fg-main);
+	text-align: center;
+	font-size: 40px;
+
+	background-color: var(--bg-translucent);
+	margin: 20px;
+	padding: 20px;
+	border-radius: 0 0 0 20px;
+}
+
+/* Content */
+main {
+	margin: 40px;
+	padding: 40px;
+	margin-top: 5px;
+	padding-top: 5px;
+
+	padding-bottom: 20px;
+	border-bottom: 2px solid var(--fg-dimmed);
+	margin-bottom: 20px;
+}
+main {
+	 color: var(--fg-main);
+}
+
+/* Responsiveness for mobile devices */
+@media (max-width: 900px) {
+	main {
+		padding: 5px;
+		margin: 5px;
+	}
+}

@@ -154,23 +154,24 @@ nav aside small {
 	color: var(--fg-dimmed);
 }
 
-/* Responsiveness */
+/* Header with image */
+header {
+	width: calc(100% - 160px);
+        margin: 0;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 80px;
+        padding-bottom: 0;
+        border-radius: 0 0 0 80px;
 
-@media (max-width: 900px) {
-	/* Just show logo and number */
-	nav h1 {
-		display: none;
-	}
-	nav aside small {
-		display: none;
-	}
+        background-color: var(--bg-dimmed);
+	background-image: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+        background-size: cover;
+        background-position: center;
 
-	header, nav {
-		border-radius: 0 0 0 40px;
-		padding-left: 40px;
-		padding-right: 40px;
-		width: calc(100% - 80px);
-	}
+        color: var(--fg-main);
+        border-bottom: 3px solid var(--accent-2);
+        border-left: 3px solid var(--accent-2);
 }
 
 /* Footer */
@@ -183,4 +184,29 @@ footer p { /* Legal, Disclaimers, etc. */
 	font-size: 15px;
 	color: var(--fg-dimmed);
 	text-align: center;
+}
+
+/* Responsiveness to mobile screens */
+
+@media (max-width: 900px) {
+	/* Just show logo and number */
+	nav h1 {
+		display: none;
+	}
+	nav aside small {
+		display: none;
+	}
+
+	nav {
+		border-radius: 0 0 0 40px;
+		padding-left: 40px;
+		padding-right: 40px;
+		width: calc(100% - 80px);
+	}
+	header {
+		border-radius: 0 0 0 40px;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
 }
