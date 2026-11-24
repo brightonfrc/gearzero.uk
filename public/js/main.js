@@ -25,20 +25,27 @@ function setLink(a, url) {
   if (!url.startsWith('#')) { a.target = '_blank'; a.rel = 'noopener'; }
 }
 const socials = document.getElementById('socials');
-(CFG.socials || []).forEach(({ id, label, url }) => {
-  const li = document.createElement('li');
+(CFG.socials || []).forEach(({ id, label, tag, url }) => {
+  if (!socials) return;
+  const wrap = document.createElement('li');
   const a = document.createElement('a');
   a.setAttribute('aria-label', label);
   a.title = url ? label : label + ' (link coming soon)';
   setLink(a, url);
   a.appendChild(icon(id));
-  li.appendChild(a);
-  socials.appendChild(li);
+  wrap.appendChild(a);
+  if (tag) {
+    const t = document.createElement('span');
+    t.className = 'soc-tag';
+    t.textContent = tag;
+    wrap.appendChild(t);
+  }
+  socials.appendChild(wrap);
 });
 const teams = CFG.ftcTeams || [];
 const grid = document.getElementById('ftc-grid');
-if (!teams.length) document.getElementById('ftc').hidden = true;
-teams.forEach(t => {
+if (!teams.length && document.getElementById('ftc')) document.getElementById('ftc').hidden = true;
+(teams.length && grid ? teams : []).forEach(t => {
   const a = document.createElement('a');
   a.className = 'ftc-card';
   setLink(a, t.url);

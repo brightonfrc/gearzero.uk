@@ -2,9 +2,9 @@
 // Leave a url as '' and the icon or card shows without a link, so nothing points to the wrong place.
 window.SITE = {
   socials: [
-    { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/gearzero8173' }, // e.g. 'https://www.instagram.com/yourhandle'
-    { id: 'tiktok',    label: 'TikTok',    url: 'https://tiktok.com/@gearzero8173' }, // e.g. 'https://www.tiktok.com/@yourhandle'
-    { id: 'github',    label: 'GitHub',    url: 'https://github.com/brightonfrc' },
+    { id: 'instagram', label: 'Instagram', tag: '@gearzero8173', url: 'https://www.instagram.com/gearzero8173' }, // e.g. 'https://www.instagram.com/yourhandle'
+    { id: 'tiktok',    label: 'TikTok',    tag: '@gearzero8173', url: 'https://tiktok.com/@gearzero8173' }, // e.g. 'https://www.tiktok.com/@yourhandle'
+    { id: 'github',    label: 'GitHub',    tag: 'brightonfrc',   url: 'https://github.com/brightonfrc' },
   ],
 
   // One entry per FTC team. Add or remove lines freely; the grid adjusts.

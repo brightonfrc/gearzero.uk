@@ -13,6 +13,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -175,7 +176,7 @@ nav a:hover {
 /* hero */
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   background: linear-gradient(120deg, var(--navy) 35%, var(--navy2));
   padding-block: clamp(3rem, 8vw, 6rem);
 }
@@ -477,28 +478,171 @@ a.ftc-card[href]:hover {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-/* sponsors */
-.sponsors {
+/* contact / sponsors */
+.contact-sec {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
 }
-.sponsors .split {
-  grid-template-columns: 1.3fr 1fr;
+.contact-sec .split {
+  grid-template-columns: 1.1fr 1fr;
+  align-items: start;
 }
-.spons-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--ink);
-}
-.cta {
-  background: var(--navy);
+.contact-sec h2 {
   color: #fff;
+}
+.contact-sec .split > div > p:not(.eyebrow) {
+  max-width: 44ch;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.9rem;
+}
+.contact-list b {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+.contact-list a {
+  font-weight: 700;
+  color: #fff;
+}
+.contact-list a:hover {
+  color: var(--yellow);
+}
+.contact-sec .soc {
+  flex-wrap: wrap;
+  gap: 0.9rem 1.1rem;
+}
+.contact-sec .soc li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.soc-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+.contact-sec .cta {
+  background: #fff;
+  color: var(--ink);
   padding: 2rem;
   border-radius: 10px;
   border-left: 10px solid var(--yellow);
 }
-.cta p {
+.cta .cta-title {
+  margin: 0 0 0.75rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: none;
+  color: var(--ink);
+}
+.cta p.cta-text {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--navy);
+}
+.contact-sec .cta .btn {
+  margin-top: 0.25rem;
+  color: var(--navy);
+  background: var(--yellow);
+}
+.cta .cta-mail {
+  margin-bottom: 1.5rem;
+}
+.cta .cta-mail a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.cta .cta-mail span {
+  color: var(--ink);
+}
+.cta .cta-mail .ic {
+  stroke: #c99b00;
+}
+.cta .cta-mail a:hover {
+  text-decoration: underline;
+}
+/* 404 */
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+.page-404 main {
+  display: flex;
+  flex: 1;
+}
+.page-404 .error {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  container-type: size;
+}
+.error-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 46rem;
+  justify-self: start;
+}
+.error-code {
+  margin-bottom: 1.25rem;
+  font-size: clamp(4.5rem, min(18vw, 24cqh), 11rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+}
+.error-code span {
+  color: var(--yellow);
+}
+.error-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.error-next {
+  margin: 1.75rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+.error-next a {
+  color: var(--yellow);
+  font-weight: 700;
+}
+.error-gear {
+  position: absolute;
+  right: -5rem;
+  bottom: -8rem;
+  width: min(32rem, 70vw);
+  height: auto;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 0.7;
+  pointer-events: none;
 }
 /* footer */
 footer {
@@ -565,7 +709,7 @@ footer {
   .grid3,
   .split,
   .split.rev,
-  .sponsors .split {
+  .contact-sec .split {
     grid-template-columns: 1fr;
   }
   .stats .wrap {
